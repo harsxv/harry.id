@@ -1,24 +1,24 @@
 const BLOG = {
-  author: 'Witt',
-  title: 'Witt - unix.bio',
+  author: 'Harry Suryapambagya',
+  title: 'Your Humble SysAdmin - harry.id',
   description:
-    "Hi, I'm Witt. A JavaScript full stack engineer, I'm creating apps and libs to help improve the developer experience.",
-  summary: 'JavaScript 工程师，对开发者体验感兴趣。',
-  language: 'zh-cn',
+    "Hi, I'm Harry. A humble system administrator, I'm overseeing servers and coffee machine to ensure you enjoy the experience.",
+  summary: 'Your humble SysAdmin',
+  language: 'en-us',
   latestLimit: 5,
 
   labels: {
-    default: '所有文章',
-    latest: '最近',
-    list: '所有',
+    default: 'blog',
+    latest: 'latest',
+    list: 'all',
   },
 
-  email: 'unix.bio@gmail.com',
-  github: 'unix',
-  twitter: 'echo_witt',
-  domain: 'unix.bio',
+  email: 'hey@harry.id',
+  github: 'harsxv',
+  twitter: 'harsxv',
+  domain: 'harry.id',
 
-  googleAnalytics: 'UA-110371817-3',
+  googleAnalytics: 'UA-000000000-0',
   cn: true,
   enableViews: true,
 

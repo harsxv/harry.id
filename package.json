@@ -4,7 +4,7 @@
   "scripts": {
     "start": "npm run collect && next dev",
     "dev": "npm run collect && next dev",
-    "now-build": "npm run collect && next build",
+    "build": "npm run collect && next build",
     "post": "node scripts/create.js",
     "prettier": "prettier --write .",
     "collect": "node scripts/collect-meta.js",
