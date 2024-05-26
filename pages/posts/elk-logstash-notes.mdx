@@ -1,0 +1,28 @@
+import Layout from 'lib/components/layout'
+import {} from '@geist-ui/core'
+
+export const meta = {
+  title: 'Logstash: SIGHUP for Reloading New Config',
+  date: '2021-05-09T16:44:54.000Z',
+  description: '',
+  image: '',
+}
+
+Sometimes, I need to reconfigure Logstash config. 
+
+Without restart the services, just send a SIGHUP to the running Logstash process.
+
+    $ pgrep -U logstash
+    17913
+    $ kill -SIGHUP 17913
+
+You can see on Logstash log, it just already reloads.
+
+    $ tail -f /var/log/logstash/logstash-plain.log
+    [2021-05-09T16:35:12,815][WARN ][logstash.runner          ] SIGHUP received.
+    [2021-05-09T16:35:14,184][INFO ][logstash.pipelineaction.reload] Reloading pipeline {"pipeline.id"=>:main}
+    [2021-05-09T16:35:17,143][INFO ][logstash.javapipeline    ][main] Pipeline terminated {"pipeline.id"=>"main"}
+
+My new Logstash config has been successfuly reloaded and ready to process a bunch of log again.
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
