@@ -18,7 +18,7 @@ const BLOG = {
   twitter: 'harsxv',
   domain: 'harry.id',
 
-  googleAnalytics: 'UA-000000000-0',
+  googleAnalytics: 'G-Z10N3EHVSF',
   cn: true,
   enableViews: true,
 
