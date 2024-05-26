@@ -1,0 +1,47 @@
+import Layout from 'lib/components/layout'
+import {} from '@geist-ui/core'
+
+export const meta = {
+  title: "Certbot: Setup Let's Encrypt automatically",
+  date: '2021-06-09T03:53:08.000Z',
+  description: '',
+  image: '',
+}
+
+    root@localhost ~certbot certonly --nginx -d localhost.com
+    Saving debug log to /var/log/letsencrypt/letsencrypt.log
+    Could not choose appropriate plugin: The requested nginx plugin does not appear to be installed 
+    The requested nginx plugin does not appear to be installed
+
+I need to install `python2-certbot-nginx` package first. 
+
+Re-run the command.
+
+    root@localhost ~
+    # certbot certonly --nginx -d localhost.com
+    Saving debug log to /var/log/letsencrypt/letsencrypt.log
+    Plugins selected: Authenticator nginx, Installer nginx
+    Starting new HTTPS connection (1): acme-v02.api.letsencrypt.org
+    Requesting a certificate for localhost.com
+    Performing the following challenges:
+    http-01 challenge for localhost.com
+    Waiting for verification...
+    Cleaning up challenges
+    
+    IMPORTANT NOTES:
+     - Congratulations! Your certificate and chain have been saved at:
+       /etc/letsencrypt/live/localhost.com/fullchain.pem
+       Your key file has been saved at:
+       /etc/letsencrypt/live/localhost.com/privkey.pem
+       Your certificate will expire on 2021-09-07. To obtain a new or
+       tweaked version of this certificate in the future, simply run
+       certbot again. To non-interactively renew *all* of your
+       certificates, run "certbot renew"
+     - If you like Certbot, please consider supporting our work by:
+    
+       Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+       Donating to EFF:                    https://eff.org/donate-le
+
+Problem solved.
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
