@@ -1,0 +1,77 @@
+import Layout from 'lib/components/layout'
+import {} from '@geist-ui/core'
+
+export const meta = {
+  title: 'WordPress Malicious Process Mitigation',
+  date: '2024-06-22T04:11:13.956Z',
+  description: '',
+  image: '',
+}
+
+When a website is down, server resources are high, and usually it was an infection
+on the site. It's crucial to act quickly to identify and mitigate the issue.
+
+Here's my general step-by-step guide to identify if WordPress site is infected
+and some possible ways to mitigate it.
+
+## Check Server Resource Usage
+
+Using SSH into your server, run the almighty `top` command to see what's happen.
+
+Look for processes consuming high CPU, memory, or disk I/O. Suspicious processes
+could indicate malicious activity.
+
+They usually ran with unknown and unique process name that you probably never
+knew before.
+
+Curious what the name would be? I had a bucket of malware files in the past.
+
+You can find them here:
+> https://github.com/harsxv/awesome-malware (around 25K+ files!)
+
+## Check Process File Location
+
+I prefer using `lsof -p $PID` to check where is the file located.
+
+Then I set the permission to zero "000" and set immutable to that file, just to
+prevent it to be run again.
+
+```
+chmod 000 public_html/path/malicious_file
+chattr +i public_html/path/malicious_file
+```
+
+## Finding the Breadcrumbs
+
+tbc.. generally using grep, find, etc.
+
+again, you must search something like in these examples: 
+
+> https://github.com/harsxv/awesome-malware (around 25K+ files!)
+
+## Check Cronjob
+
+Another usual things to check is in the cronjob. Malicious actor can put some task
+in your cronjob, you can check using `crontab -l` or check under directory `/etc/cron*`
+
+## Security Plugin
+
+It's worth to have security plugin such as Wordfence, or you can find the others.
+
+There is so many, but I prefer [Wordfence](https://wordpress.org/plugins/wordfence/).
+
+## Broken WordPress System
+
+Main thing to do is to download WordPress core system to avoid any damaged.
+
+Using WP CLI command is fine enough.
+
+```
+wp core download --force 
+
+# Don't worry, it's safe.
+```
+
+_...sure thing I will update this post as soon as I'm possible, but yeah pretty much it._
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
