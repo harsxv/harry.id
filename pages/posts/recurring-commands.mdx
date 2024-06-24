@@ -1,0 +1,25 @@
+import Layout from 'lib/components/layout'
+import {} from '@geist-ui/core'
+
+export const meta = {
+  title: 'Recurring Commands',
+  date: '2021-05-08T06:24:05.000Z',
+  description: '',
+  image: '',
+}
+
+This posts I created to notes what recurring commands I always used for.
+
+    Find some file older than 90 day then delete  
+    $ find -name '$file' -mtime +90 -delete
+    
+    Show all IP Address from server
+    $ hostname -I
+    
+    ...
+
+I will keep this post updated.
+
+..not a promise
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
