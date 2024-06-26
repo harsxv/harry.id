@@ -2,8 +2,8 @@ const BLOG = {
   author: 'Harry Suryapambagya',
   title: 'Your Humble SysAdmin - harry.id',
   description:
-    "Hi, I'm Harry. A humble system administrator, I'm overseeing servers and coffee machine to ensure you enjoy the experience.",
-  summary: 'Your humble SysAdmin',
+    "Harry Suryapambagya blog. Your humble SysAdadmin and DevOps Engineer.",
+  summary: 'Your humble SysAdmin and DevOps Engineer',
   language: 'en-us',
   latestLimit: 5,
 
