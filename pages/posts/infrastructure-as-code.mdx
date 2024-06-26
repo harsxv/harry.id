@@ -1,0 +1,31 @@
+import Layout from 'lib/components/layout'
+import {} from '@geist-ui/core'
+
+export const meta = {
+  title: 'Infrastrucutre as a Code',
+  date: '2021-07-01T11:13:51.000Z',
+  description: '',
+  image: '',
+}
+
+In the middle of the afternoon, I had a casual chat with my co-mentor. We were discussing the HashiTalks event coming up on July 29th.
+
+There are so many interesting topics to be covered. My co-mentor mentioned a few key ones:
+
+    Packer: for creating VM images (supports KVM)
+    Vagrant: for building VMs (supports VirtualBox, Docker)
+    Terraform: for building cloud infrastructure (supports AWS, Linode, etc.)
+    Consul: for networking (supports clusters, load balancing, multi-data center/zone)
+    Boundary: (not applicable)
+    Vault: for storing keys and secrets (supports .env files in apps, SSL, etc.)
+    Nomad: for container orchestration (supports HA, Docker, Kubernetes)
+    Waypoint: provides a modern workflow to build, deploy, and release across platforms (not applicable)
+
+I copied his chat directly, haha. I think I should write about these topics later.
+
+    Infra as code, are you ready to rock? 😛
+    @tox - www.sysadmin.id
+
+Thanks, Pak! Let me sharpen my ax first.
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
