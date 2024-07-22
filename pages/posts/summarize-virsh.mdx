@@ -1,0 +1,24 @@
+import Layout from 'lib/components/layout'
+import {} from '@geist-ui/core'
+
+export const meta = {
+  title: 'Summarize Guest VMs Status',
+  date: '2024-07-22T07:38:19.301Z',
+  description: '',
+  image: '',
+}
+
+Just a oneliner to count/summarize status of Guest VMs.
+
+```
+[root@kvm-buf1 ~ ]# virsh list --all | awk '/running/{running++} /idle/{idle++} /paused/{paused++} /in shutdown/{in_shutdown++} /shut off/{shut_off++} /crashed/{crashed++} /pmsuspended/{pmsuspended++} END {print "Running VMs: " running "\nIdle VMs: " idle "\nPaused VMs: " paused "\nIn Shutdown VMs: " in_shutdown "\nShut off VMs: " shut_off "\nCrashed: " crashed "\nPower Suspended: " pmsuspended}'
+Running VMs: 16
+Idle VMs: 0
+Paused VMs: 1
+In Shutdown VMs: 0
+Shut off VMs: 33
+Crashed: 0
+Power Suspended: 0
+```
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

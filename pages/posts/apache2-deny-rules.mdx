@@ -1,0 +1,33 @@
+import Layout from 'lib/components/layout'
+import {} from '@geist-ui/core'
+
+export const meta = {
+  title: 'apache2-deny-rules',
+  date: '2021-06-28T07:06:33.000Z',
+  description: '',
+  image: '',
+}
+
+esterday, I've had some task to make restriction to some web apps.
+
+It's use Apache2 as web service. Unfortunately, I bit confused about the restriction setup because I often used [NGINX ](https://serverguy.com/comparison/apache-vs-nginx/)as web service. 
+
+Then, I knew that some syntax configuration are different even just between minor version.
+
+    # Apache 2.2
+    
+    order deny,allow
+    allow from 12.34.5.67
+    allow from 98.76.54.32
+    deny from all
+    
+    # Apache 2.4
+    
+    Require ip 12.34.5.67
+    Require ip 98.76.54.32
+
+Don't forget about the required [Apache modules](https://httpd.apache.org/docs/2.4/mod/mod_authz_core.html). I will wrote about this later.
+
+*also, the `order` syntax are different between `deny,allow` and `allow,deny` . [smh](http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#page-header).
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
