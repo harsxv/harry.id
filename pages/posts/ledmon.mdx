@@ -1,0 +1,41 @@
+import Layout from 'lib/components/layout'
+import {} from '@geist-ui/core'
+
+export const meta = {
+  title: 'Ledmon: Blink your disk enclosure',
+  date: '2021-10-29T02:47:43.000Z',
+  description: '',
+  image: '',
+}
+
+Yes, you can blink your disk enclosure whenever you want.
+
+This tools made by Intel Corp. It's also opensource. Check this [repos](https://github.com/intel/ledmon).
+
+Installation is pretty simple, just give it a kick with your package manager.
+
+    root@server
+    $ yum install ledmon
+    
+    root@server
+    # df -h
+    Filesystem                      Size  Used Avail Use% Mounted on
+    devtmpfs                         55G     0   55G   0% /dev
+    tmpfs                            55G     0   55G   0% /dev/shm
+    tmpfs                            55G   42M   55G   1% /run
+    tmpfs                            55G     0   55G   0% /sys/fs/cgroup
+    /dev/sdb2                       107G   20G   87G  19% /
+    /dev/sdb1                      1014M  256M  759M  26% /boot
+    /dev/sda                        224G  196G   28G  88% /mnt/brick1
+    tmpfs                            11G     0   11G   0% /run/user/9869
+    tmpfs                            11G     0   11G   0% /run/user/0
+    
+    root@server ~
+    # ledctl locate=/dev/sdb
+
+This red blink won't stop until you tell Ledmon to stop.
+
+    root@server ~
+    # ledctl locate_off=/dev/sdb
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
