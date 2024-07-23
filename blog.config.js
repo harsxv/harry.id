@@ -19,11 +19,10 @@ const BLOG = {
   domain: 'harry.id',
 
   googleAnalytics: 'G-Z10N3EHVSF',
-  cn: true,
-  enableViews: true,
+  enableViews: false,
 
   layouts: {
-    pageWidth: '750px',
+    pageWidth: '900px',
     pageWidthMobile: '88vw',
   },
 }
