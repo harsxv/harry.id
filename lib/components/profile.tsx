@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useTheme, User, Link } from '@geist-ui/core';
+import { useTheme, Link } from '@geist-ui/core';
 import NextLink from 'next/link';
 import Image from 'next/image';
 import ProfileLinks from './profile-links';
